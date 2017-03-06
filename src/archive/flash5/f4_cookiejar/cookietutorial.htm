@@ -1,0 +1,79 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<title>CookieJar Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>Server-less Cookies With a Flash HTML Template</b></p>
+<p><b>First be aware.</b></p>
+<p> This method uses Javascript, which doesn't communicate with Flash within IE 
+  on the Mac. If you have an important business need for using a cookie you would 
+  be better off with a server side tool, which doesn't suffer from this limitation. 
+  But for artists and experimenters, this method is pretty nice. The best use 
+  of it may be to save a string on the hard drive if you want to distribute via 
+  CD. A cookie only saves one string. If you want to save more than one string, 
+  you might want to use something like a stack or a list and concatenate the string 
+  values together before saving them. On reentry pop the values back off the stack 
+  or list to get back your information.</p>
+<p>If you have more elaborate needs for saving files from a Flash CD you can look 
+  at ASsaver at http://www.ashzfall.com/products/afsaver/ I haven't used it, but 
+  it looks pretty nice.</p>
+<p>I'd love to hear about browsers that it doesn't work with. Does it work with 
+  Opera? I don't know. I'm sorry, but I just haven't had time for serious testing 
+  of this. Thus &quot;Be Aware&quot;.</p>
+<p>Also, be sure to test with cookies disabled to make sure that your movie degrades 
+  gracefully if cookies are turned off.</p>
+<p>&nbsp;</p>
+<p><b>So how do you use the cookieJar HTML template?</b></p>
+<p>First place the cookieJar.html file in your Flash HTML template directory. 
+  On windows this default would be C:/Program Files/Macromedia/Flash/HTML/.</p>
+<p>Before you publish your fla, go to File/Publish on the menu. Choose the HTML 
+  tab and change the Template to CookieJar.</p>
+<p>When you want to update the value of the cookie send an FS Command with &quot;setCookies&quot; 
+  as the command and the string you want to save as the argument.</p>
+<p>For example this code could be put in a button.</p>
+<blockquote> 
+  <p>On (Release)<br>
+    FS Command ("setCookies", "Peanut Butter")<br>
+    End On </p>
+</blockquote>
+<p>Clicking this button would then set the value of the cookie to the string &quot;Peanut 
+  Butter&quot;. The Javascript code will then also update the &quot;/:CookieJar&quot; 
+  variable in Flash to &quot;Peanut Butter&quot; as well. The code tells the cookie 
+  to persist for a year from the last time it was set.</p>
+<p>I would suggest that you don't use the &quot;/:CookieJar&quot; variable directly 
+  as the second argument in the call to FS Command. If you want to use a variable, 
+  create it separately, calling it &quot;/:CookieValue&quot;, for example. That 
+  would make it easier to debug and also would avoid situations where Javascript 
+  and ActionScript both are trying to change the CookieJar variable at the same 
+  time. </p>
+<p>So you would write to CookieValue and send that to the JavaScript code. The 
+  JavaScript code writes to CookieJar which you only read from. </p>
+<p>There is an example .fla that you can use to examine this more. You can look 
+  at it <a href="cookieJarEx.html">here</a>.</p>
+<p>&nbsp;</p>
+<p><b>So how does it work?</b></p>
+<p>When you first come to the page there is an OnLoad handler in the HTML that 
+  is called when the page first finishes loading. This handler calls the FSCommand 
+  Function with &quot;GetCookies&quot; as the command. This function gets the 
+  cookie value if it it exists, otherwise it initializes the cookie with the string 
+  value &quot;initialized&quot; and saves it for the user.</p>
+<p>Now the Flash movie can call the FSCommand function further with &quot;setCookies&quot; 
+  and &quot;a string value&quot; as described above, which will update the cookie 
+  value to what was set.</p>
+<p>&nbsp;</p>
+<p><b>A Final Note</b></p>
+<p>Sorry that this tutorial is so sparse, but I initially created this code half 
+  a year ago now and there are so many options that I could cover that if I try 
+  to do a more complete job of it, I realize I'd never finish. So, hopefully this 
+  is a full enough description for it to be useful to some folk. I'd prefer if 
+  you direct any questions to the were-here forum, rather than e-mailing me. That 
+  way other programmers can help and things can be described only once. I'll help 
+  if I can, but I am pretty over-committed as it is, so no promises. </p>
+<p>Good luck with all.</p>
+<p>Mr. Cort</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<TITLE>cookieJarEx</TITLE>
+</HEAD>
+<BODY bgcolor="#000000" onload="cookieJarEx_DoFSCommand('getCookies', 'cookieJar')">
+<SCRIPT LANGUAGE=JavaScript>
+//
+// Cookiejar Template V1.0 Created: March 12, 2000 
+// Author Cortlandt Winters - cort@notebookmargins.com
+//
+// This template is bassed on Macromedia's FS_Command HTML template. 
+// All changes to that template are (c) Cortlandt Winters of Notebook Margins Playhouse
+// It is provided free of charge for both commercial and noncommercial work provided
+// that an email message is sent to cort@notebookmargins.com with a link to the site where 
+// it will be used.
+//
+// THESE TEMPLATE MODIFICATIONS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR 
+// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+// A tutorial on it's use, information on potential problems to aviod and revised versions 
+// may be availiable at www.were-here.com or www.notebookmargins.com
+//
+// Do something wavey with it and be cool.
+//
+<!--
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle all the the FSCommand messages in a Flash movie
+function cookieJarEx_DoFSCommand(command, args) {
+  var cookieJarExObj = InternetExplorer ? cookieJarEx : document.cookieJarEx;
+	var expirationDate = new Date();
+	var cookieJarValue = escape("initialized");
+	var documentCookies = document.cookie;
+	var cookieJarTip = 0;
+	var valueTip = 0;
+	var valueTail = 0;
+	// Use this to debug your code 
+	//alert("On Entry to FSCommand: Command=" + command + ", " +
+	//			        "Args=" + args + ", " +
+	//		     "DocumentCookies=" + documentCookies);
+	if (command == "getCookies"){
+		cookieJarTip = documentCookies.indexOf("cookieJar=");
+		if (cookieJarTip == -1){
+			// cookieJar doesn't exist, so we create and initialize it
+			document.cookie = "cookieJar=" + cookieJarValue;
+			// after setting the cookie we try again
+			// and set the cookieJar value in Flash
+			// to an error message if it still isn't there
+			// (this would happen if the user has disabled cookies for example)
+			cookieJarTip = documentCookies.indexOf("cookieJar=");
+			if (cookieJarTip == -1){
+				cookieJarExObj.SetVariable("cookieJar","Ack Ack! I Could not save the cookie.");	
+			}
+		} else {
+			//cookieJar exists so we get it
+			valueTip = cookieJarTip + 10;
+			valueTail = documentCookies.indexOf(";", valueTip);
+			if (valueTail == -1){ 
+				valueTail = documentCookies.length;
+			}
+			cookieJarValue = documentCookies.substring(valueTip,valueTail);
+			cookieJarValue = unescape(cookieJarValue);	
+		}	
+		cookieJarExObj.SetVariable("cookieJar",cookieJarValue);	
+	}
+	if (command == "setCookies"){	
+		expirationDate.setFullYear(expirationDate.getFullYear() + 1);	
+		expires = expirationDate.toGMTString();
+	
+		// Set Cookie Value
+		cookieJarValue = args; 
+		cookieJarExObj.SetVariable("cookieJar",cookieJarValue);		
+		cookieJarValue = escape(cookieJarValue);
+		document.cookie= "cookieJar=" 	+ cookieJarValue  
+						+ "; expires=" 
+						+ expires;
+		// after setting the cookie we test that it is there
+		// and set the cookieJar value in Flash to
+		// an error message if it couln't be set
+		// (which would happen if the user has disabled cookies)
+		cookieJarTip = documentCookies.indexOf("cookieJar=");
+		if (cookieJarTip == -1){
+			cookieJarExObj.SetVariable("cookieJar","Ack Ack! I Could not save the cookie.");			
+		}		
+	}
+}
+// Hook for Internet Explorer 
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && 
+	  navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('Sub cookieJarEx_FSCommand(ByVal command, ByVal args)\n');
+	document.write('  call cookieJarEx_DoFSCommand(command, args)\n');
+	document.write('end sub\n');
+	document.write('</SCRIPT\> \n');
+}
+//-->
+</SCRIPT>
+<!-- text used in the movie-->
+<!--"C"  is for cookie and is good enough for me. Cookie Monster --><OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0"
+ ID=cookieJarEx WIDTH=600 HEIGHT=300>
+  <PARAM NAME=movie VALUE="cookieJarEx.swf">
+   <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#000000>
+  <EMBED src="cookieJarEx.swf" quality=high bgcolor=#000000  WIDTH=600 HEIGHT=300	swLiveConnect=true NAME=cookieJarEx TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+  </EMBED>
+</OBJECT>
+</BODY>
+</HTML>
