@@ -1,5 +1,8 @@
 # kdtree
 
+Things
+
+
 A code kata for the agnostechvalley user group.
 https://www.meetup.com/agnostechvalley/events/237797340/
 
