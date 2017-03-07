@@ -5,7 +5,6 @@
 
 <script>
   import Bintree from "../util/bintree.js"
-  // Imported for easier distribution to other folk.
 
   //==================================================================================
   // createNode - Node constructor used by BinTree

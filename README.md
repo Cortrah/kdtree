@@ -14,7 +14,7 @@ https://github.com/ubilabs/kd-tree-javascript
 
 Their examples are particularly great for getting the sense of what a kdtree is
 
-Another good descriptionp of the use of a kdtree applied specifically to 3d rendering via binary space partitioning
+Another good description of the use of a kdtree applied specifically to 3d rendering via binary space partitioning
 https://www.youtube.com/watch?v=yTRzfKh4Tg0
 
 some elixir related bintree links
