@@ -10,7 +10,8 @@ I chose a kdtree from http://rosettacode.org/wiki/K-d_tree
 
 I'd like to do this in elixir, but in order to get it done by wednessday I decided to coble together something using
  an ancient binary search tree that I wrote in actionscript in 2000
- and an implmentation by ubilabs that used a binary heap instead of a binary search tree as the interface
+ and use it to augement an implementation by ubilabs that used a binary heap instead of a binary search tree as the
+ data structure.
 
 This is the readme for the ubilabs version
 https://github.com/ubilabs/kd-tree-javascript
