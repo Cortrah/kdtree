@@ -18,11 +18,16 @@ Another good descriptionp of the use of a kdtree applied specifically to 3d rend
 https://www.youtube.com/watch?v=yTRzfKh4Tg0
 
 some elixir related bintree links
-https://github.com/jtarchie/kdtree-erlang
+
+https://github.com/jtarchie/kdtree-erlang/blob/master/kdtree.erl
+
 https://medium.com/@sashaafm/developing-an-algorithm-and-data-structures-collection-in-elixir-part-ii-binary-search-tree-8c18e2294dee#.bn3pn3fea
 
+
 Also two great books that really get into this stuff
+
 https://www.elsevier.com/books/foundations-of-multidimensional-and-metric-data-structures/samet/978-0-12-369446-1
+
 https://books.google.com/books/about/Purely_Functional_Data_Structures.html?id=SxPzSTcTalAC&source=kp_cover
 
 ## Build Info
