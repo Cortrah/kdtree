@@ -1,22 +1,19 @@
 # kdtree
 
-Things
-
-
 A code kata for the agnostechvalley user group.
 https://www.meetup.com/agnostechvalley/events/237797340/
 
 I chose a kdtree from http://rosettacode.org/wiki/K-d_tree
 
 I'd like to do this in elixir, but in order to get it done by wednessday I decided to coble together something using
- an ancient binary search tree that I wrote in actionscript in 2000
+ an (ancient binary search tree)[./src/archive/flash_things.htm] that I wrote in actionscript in 2000
  and use it to augment an implementation by ubilabs that used a binary heap instead of a binary search tree as the
  data structure.
 
 This is the readme for the ubilabs version
 https://github.com/ubilabs/kd-tree-javascript
 
-Their examples are particularly great for getting the sense of what a kdtree is
+Their examples are particularly great for getting the sense of what a kdtree is, I love the color picker example.
 
 Another good description of the use of a kdtree applied specifically to 3d rendering via binary space partitioning
 https://www.youtube.com/watch?v=yTRzfKh4Tg0

@@ -274,7 +274,9 @@ createBinTree.prototype.getRootPtr = (function () {
 //==============================================================================
 // getNextLocVal - The ptr function allows a user to step through the tree
 //==============================================================================
-createBinTree.prototype.getNextLocVal = (function (locationPtr) {return this.getNextLocValPtr(locationPtr).value;});
+createBinTree.prototype.getNextLocVal = (function (locationPtr) {
+  return this.getNextLocValPtr(locationPtr).value;
+});
 createBinTree.prototype.getNextLocValPtr = (function (locationPtr) {
   var returnValPtr;
 
@@ -297,7 +299,9 @@ createBinTree.prototype.getNextLocValPtr = (function (locationPtr) {
 //==============================================================================
 // getPrevLocVal - The ptr function allows a user to step through the tree
 //==============================================================================
-createBinTree.prototype.getPrevLocVal = (function (locationPtr) {return this.getPrevLocValPtr(locationPtr).value;});
+createBinTree.prototype.getPrevLocVal = (function (locationPtr) {
+  return this.getPrevLocValPtr(locationPtr).value;
+});
 createBinTree.prototype.getPrevLocValPtr = (function (locationPtr) {
   var returnValPtr;
 
