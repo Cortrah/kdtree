@@ -136,7 +136,9 @@ createBinTree.prototype.addNode = (function (newValue) {
 //==============================================================================
 // containsNode - takes a value and returns true if it is in the set
 //==============================================================================
-createBinTree.prototype.containsNode = (function (findValue){ return this.containsNodeRec(findValue,this.rootNode)});
+createBinTree.prototype.containsNode = (function (findValue){
+  return this.containsNodeRec(findValue,this.rootNode)
+});
 createBinTree.prototype.containsNodeRec = (function (findValue, locationPtr){
   if (locationPtr == null){
     return false;
@@ -152,7 +154,9 @@ createBinTree.prototype.containsNodeRec = (function (findValue, locationPtr){
 //==============================================================================
 // deleteNode - takes a value and removes from the set
 //==============================================================================
-createBinTree.prototype.deleteNode = (function (nodeValue) {this.deleteNodePtr(this.getNodePtr(nodeValue));});
+createBinTree.prototype.deleteNode = (function (nodeValue) {
+  this.deleteNodePtr(this.getNodePtr(nodeValue));
+});
 createBinTree.prototype.deleteNodePtr = (function (delNodePtr){
   var theSuccessor;
   var successorsChild;
@@ -223,7 +227,9 @@ createBinTree.prototype.getNodePtr = (function (findValue) {
 //==============================================================================
 // getMinVal
 //==============================================================================
-createBinTree.prototype.getMinVal = (function (locationPtr) {return this.getMinValPtr(locationPtr).value;});
+createBinTree.prototype.getMinVal = (function (locationPtr) {
+  return this.getMinValPtr(locationPtr).value;
+});
 createBinTree.prototype.getMinValPtr = (function (locationPtr) {
 
   if (locationPtr == null){
@@ -238,7 +244,9 @@ createBinTree.prototype.getMinValPtr = (function (locationPtr) {
 //==================================================================================
 // getMaxVal
 //==================================================================================
-createBinTree.prototype.getMaxVal = (function (locationPtr) {return this.getMaxValPtr(locationPtr).value;});
+createBinTree.prototype.getMaxVal = (function (locationPtr) {
+  return this.getMaxValPtr(locationPtr).value;
+});
 createBinTree.prototype.getMaxValPtr = (function (locationPtr) {
 
   if (locationPtr == null){
@@ -253,7 +261,9 @@ createBinTree.prototype.getMaxValPtr = (function (locationPtr) {
 //==================================================================================
 // getRandVal
 //==================================================================================
-createBinTree.prototype.getRandVal = (function () {return this.getRandValPtr(this.getMinValPtr(this.rootNode)).value;});
+createBinTree.prototype.getRandVal = (function () {
+  return this.getRandValPtr(this.getMinValPtr(this.rootNode)).value;
+});
 createBinTree.prototype.getRandValPtr = (function (locationPtr) {
   var randomIndex = random(this.cardinality)+1;
   var i;
