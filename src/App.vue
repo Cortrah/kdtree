@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <KdToy></KdToy>
+    <TwoDToy></TwoDToy>
   </div>
 </template>
 
 <script>
-import KdToy from './components/KdToy'
+import TwoDToy from './components/TwoDToy'
 
 export default {
   name: 'app',
   components: {
-    KdToy
+      TwoDToy
   }
 }
 </script>
